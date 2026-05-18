@@ -57,7 +57,24 @@ describe('Atualizar agendamento', () => {
                     cy.log("Agendamento alterado")
                 })
         })
-
-
     });
+
+    it('Não deve atualizar agendamento com id inválido', () => {
+            cy.request({
+                method: "PATCH",
+                url: "https://restful-booker.herokuapp.com/booking/654321",
+                headers: {
+                    "cookie": `token=${token}`,
+                },
+                failOnStatusCode: false,
+                body: {
+                    "firstname": "Jorge",
+                    "lastname": "Bravo"
+                }
+            })
+                .then((resposta) => {
+                    expect(resposta.status).to.equal(405)
+                })
+        })
+    
 });
