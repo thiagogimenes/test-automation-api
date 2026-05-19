@@ -1,0 +1,11 @@
+{
+	"firstname": 1,
+	"lastname": "Nolan",
+	"totalprice": 111,
+	"depositpaid": true,
+	"bookingdates": {
+		"checkin": "2026-05-17",
+		"checkout": "2026-05-18"
+	},
+	"additionalneeds": "cafézin"
+}
