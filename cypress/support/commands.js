@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('Login', (username, password) => {
+    cy.request({
+        method: "POST",
+        url: "https://restful-booker.herokuapp.com/auth",
+        body: {
+            username: username,
+            password: password
+        }
+    })
+})
+
+// Cypress.Commands.add('CadastroAgendamento', (agendamento))
