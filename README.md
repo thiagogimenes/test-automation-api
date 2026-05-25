@@ -1,21 +1,54 @@
-Projeto de automação de teste de API usando cypress 
+# Projeto de automação de teste de API usando cypress 
 
-API usada para automação 
+## API usada para automação 
 https://restful-booker.herokuapp.com/apidoc/index.html#api-Auth-CreateToken
 
-Helth: 
-```
+### Health da aplicação
+``` curl
 curl -i https://restful-booker.herokuapp.com/ping
 ```
 
+## Funcionalidades da api
 
-Mentoria qazando
+> Criar token
 
+> Criar agendamento
 
-**Infos**
-hooks
-befereEach - executa alguma coisa para cada cenário da stack
+> Alterar agendamento parcial
 
-before - executa atendas da stack de teste
+> Alterar agendamento total
 
-after - executa alguma coisa depois de tudos cenários executados.
+> Deletar agendamento 
+
+> Buscar agendamento
+
+> Buscar todos agendamentos
+
+### Instalação
+
+Criar projeto
+``` javascript
+npm init -y
+```
+
+Instalar cypress
+``` javascript
+npm install cypress 
+```
+
+### Bibliotecas
+
+faker-js
+
+``` javascript
+npm install @faker-js/faker
+```
+
+### Executar projeto
+
+``` javascript
+npx cypress open
+```
+
+------
+###### Mentoria qazando

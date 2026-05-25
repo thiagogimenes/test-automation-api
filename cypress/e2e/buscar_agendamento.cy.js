@@ -8,7 +8,7 @@ describe('Buscar agendamento', () => {
 
         cy.request({
             method: "POST",
-            url: "https://restful-booker.herokuapp.com/booking",
+            url: "/booking",
             body: agendamento_sucesso,
         }).then((resposta) => {
             expect(resposta.status).to.equal(200)
@@ -17,7 +17,7 @@ describe('Buscar agendamento', () => {
 
             cy.request({
                 method: "GET",
-                url: `https://restful-booker.herokuapp.com/booking/${id}`,
+                url: `/booking/${id}`,
             })
                 .then((resposta) => {
                     expect(resposta.status).to.equal(200)
@@ -34,7 +34,7 @@ describe('Buscar agendamento', () => {
     it('Não deve buscar agendamento inexistente', () => {
         cy.request({
             method: "GET",
-            url: "https://restful-booker.herokuapp.com/booking/xpto",
+            url: "/booking/xpto",
             failOnStatusCode: false,
         })
             .then((resposta) => {

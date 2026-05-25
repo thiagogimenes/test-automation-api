@@ -10,7 +10,7 @@ describe('Deletar agendamento', () => {
 
             cy.request({
                 method: "POST",
-                url: "https://restful-booker.herokuapp.com/auth",
+                url: "/auth",
                 body: {
                     username: "admin",
                     password: "password123"
@@ -23,7 +23,7 @@ describe('Deletar agendamento', () => {
     it('Deve deletar agendamento com sucesso', () => {
         cy.request({
             method: "POST",
-            url: "https://restful-booker.herokuapp.com/booking",
+            url: "/booking",
             body: agendamento_sucesso,
         }).then((resposta) => {
             expect(resposta.status).to.equal(200)
@@ -32,7 +32,7 @@ describe('Deletar agendamento', () => {
 
             cy.request({
                 method: "DELETE",
-                url: `https://restful-booker.herokuapp.com/booking/${id}`,
+                url: `/booking/${id}`,
                 headers: {
                     "cookie": `token=${token}`,
                 }
@@ -46,7 +46,7 @@ describe('Deletar agendamento', () => {
     it('Não deve deletar um registros inexistente', () => {
         cy.request({
                 method: "DELETE",
-                url: `https://restful-booker.herokuapp.com/booking/xpto`,
+                url: `/booking/xpto`,
                 headers: {
                     "cookie": `token=${token}`,
                 },
@@ -61,7 +61,7 @@ describe('Deletar agendamento', () => {
     it.only('Não deve deletar um registro já deletado', () => {
         cy.request({
             method: "POST",
-            url: "https://restful-booker.herokuapp.com/booking",
+            url: "/booking",
             body: agendamento_sucesso,
         }).then((resposta) => {
             expect(resposta.status).to.equal(200)
@@ -70,7 +70,7 @@ describe('Deletar agendamento', () => {
 
             cy.request({
                 method: "DELETE",
-                url: `https://restful-booker.herokuapp.com/booking/${id}`,
+                url: `/booking/${id}`,
                 headers: {
                     "cookie": `token=${token}`,
                 }
@@ -82,7 +82,7 @@ describe('Deletar agendamento', () => {
             
                cy.request({
                 method: "DELETE",
-                url: `https://restful-booker.herokuapp.com/booking/${id}`,
+                url: `/booking/${id}`,
                 headers: {
                     "cookie": `token=${token}`,
                 },
