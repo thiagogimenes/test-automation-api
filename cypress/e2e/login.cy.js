@@ -2,7 +2,7 @@
 
 describe('Realizar login', () => {
 
-    it('Deve realizar login com sucesso', () => {
+    it('Login com sucesso', () => {
         cy.Login("admin", "password123")
         .then((resultado) => {
             expect(resultado.status).to.equal(200)
