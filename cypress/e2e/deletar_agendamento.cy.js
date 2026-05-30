@@ -2,7 +2,7 @@
 
 const agendamento_sucesso = require("../fixtures/agendamento_sucesso_payload.json")
 
-describe('Deletar agendamento', () => {
+describe('Funcionalidade de deleção de agendamento', () => {
 
         let token = ''
 
@@ -20,7 +20,7 @@ describe('Deletar agendamento', () => {
             })
         })
 
-    it('Deve deletar agendamento com sucesso', () => {
+    it('Deletar agendamento com sucesso', () => {
         cy.request({
             method: "POST",
             url: "/booking",
@@ -43,7 +43,7 @@ describe('Deletar agendamento', () => {
         })
     });
 
-    it('Não deve deletar um registros inexistente', () => {
+    it('Deletar um registros inexistente', () => {
         cy.request({
                 method: "DELETE",
                 url: `/booking/xpto`,
@@ -58,7 +58,7 @@ describe('Deletar agendamento', () => {
 
     });
 
-    it.only('Não deve deletar um registro já deletado', () => {
+    it.only('Deletar de um registro já deletado', () => {
         cy.request({
             method: "POST",
             url: "/booking",

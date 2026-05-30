@@ -4,7 +4,7 @@ const agendamento_sucesso = require("../fixtures/agendamento_sucesso_payload.jso
 
 describe('Buscar agendamento', () => {
 
-    it('Deve buscar agendamento com sucesso', () => {
+    it('Buscar agendamento com sucesso', () => {
 
         cy.request({
             method: "POST",
@@ -31,7 +31,7 @@ describe('Buscar agendamento', () => {
         })
     });
 
-    it('Não deve buscar agendamento inexistente', () => {
+    it('Buscar agendamento inexistente', () => {
         cy.request({
             method: "GET",
             url: "/booking/xpto",
