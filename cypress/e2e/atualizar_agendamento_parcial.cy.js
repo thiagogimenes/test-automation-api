@@ -13,7 +13,7 @@ describe('Atualizar agendamento parcial', () => {
         })
     })
 
-    it('Deve atualizar nome e sobrenome do agendamento', () => {
+    it('Atualizar nome e sobrenome do agendamento', () => {
         cy.request({
             method: "POST",
             url: "/booking",
@@ -51,7 +51,7 @@ describe('Atualizar agendamento parcial', () => {
         })
     });
 
-    it('Não deve atualizar agendamento com id inválido', () => {
+    it('Atualizar agendamento com id inválido', () => {
         cy.request({
             method: "PATCH",
             url: "/booking/654321",
@@ -69,7 +69,7 @@ describe('Atualizar agendamento parcial', () => {
             })
     })
 
-    it('Tentar atualizar sem token', () => {
+    it('Atualizar sem token', () => {
         cy.request({
             method: "POST",
             url: "/booking",
@@ -99,7 +99,7 @@ describe('Atualizar agendamento parcial', () => {
         })
     });
 
-    it('Deve atualizar apenas o firstName', () => {
+    it('Atualizar apenas o firstName', () => {
         cy.request({
             method: "POST",
             url: "/booking",
@@ -136,7 +136,7 @@ describe('Atualizar agendamento parcial', () => {
         })
     });
 
-    it('Deve atualizar apenas o lastName', () => {
+    it('Atualizar apenas o lastName', () => {
         cy.request({
             method: "POST",
             url: "/booking",

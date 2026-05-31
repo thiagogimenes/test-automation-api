@@ -33,7 +33,7 @@ describe('Cadastrar agendamento', () => {
             })
     });
 
-    it('Não deve cadastrar agendamento com nome passando inteiro', () => {
+    it('Cadastrar agendamento com nome passando inteiro', () => {
 
         cy.request({
             method: "POST",
